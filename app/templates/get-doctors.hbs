@@ -1,0 +1,10 @@
+{{#link-to "create-doctor"}}Add Doctor{{/link-to}}
+<br>
+<br>
+<div>
+  <ol>
+    {{#each model as |doctor|}}
+      {{doctor-edit deleteDoctor='deleteDoctor' updateDoctor='updateDoctor' doctor=doctor}}
+    {{/each}}
+  </ol>
+</div>

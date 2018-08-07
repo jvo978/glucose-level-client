@@ -2,6 +2,9 @@
   <div class="navbar-header">
     {{navbar.toggle}}
     {{#link-to "application" class="navbar-brand"}}Home{{/link-to}}
+    {{#if isAuthenticated}}
+    {{#link-to "get-doctors" class="navbar-brand"}}Doctors{{/link-to}}
+    {{/if}}
   </div>
   {{#navbar.content}}
     {{#navbar.nav class='navbar-right' as |nav|}}
