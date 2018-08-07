@@ -1,10 +1,15 @@
-{{#link-to "create-doctor"}}Add Doctor{{/link-to}}
-<br>
-<br>
-<div>
+{{#if model}}
+{{#link-to 'create-doctor' class='font-size'}}Add Doctor{{/link-to}}
+<div class='font-size'>
   <ol>
     {{#each model as |doctor|}}
-      {{doctor-edit deleteDoctor='deleteDoctor' updateDoctor='updateDoctor' doctor=doctor}}
+    <br>
+      {{doctor-edit doctor=doctor deleteDoctor='deleteDoctor' updateDoctor='updateDoctor'}}
+    <br>
     {{/each}}
   </ol>
 </div>
+{{else}}
+<h2>There are no doctors, add doctor here!</h2>{{#link-to 'create-doctor' tagName='button'}}Add Doctor
+{{/link-to}}
+{{/if}}

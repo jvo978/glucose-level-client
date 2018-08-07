@@ -1,17 +1,10 @@
 {{#if editing}}
-  <form {{action 'updateDoctor' doctor on='submit'}}>
-  {{input class="form-control input-sm" value=doctor.name}}
-  {{input class="form-control input-sm" value=doctor.specialty}}
-  {{input class="form-control input-sm" value=doctor.hospital}}
-  {{input class="form-control input-sm" value=doctor.location}}
-  <button class='btn-xs btn-primary' type='submit'>Update Doctor</button>
-  <button class='btn-xs' {{action 'toggleEditing'}}>Cancel</button>
-  </form>
+  {{doctor-edit/form updateDoctor='updateDoctor' toggleEditing='toggleEditing' doctor=doctor}}
 {{else}}
-    <li><b>{{doctor.name}}</b><br>
-    {{doctor.specialty}}<br>
-    {{doctor.hospital}}<br>
-    {{doctor.location}}</li>
-    <button {{action 'toggleEditing' doctor}}>Edit</button>
-    <button {{action 'deleteDoctor' doctor}} class='btn-xs btn-danger'>Delete</button>
+  <b>Name</b>: {{doctor.name}}<br>
+  <b>Specialty</b>: {{doctor.specialty}}<br>
+  <b>Hospital</b>: {{doctor.hospital}}<br>
+  <b>Location</b>: {{doctor.location}}<br>
+  <button {{action 'toggleEditing' doctor}} class='btn-xl btn-primary'>Edit</button>
+  <button {{action 'deleteDoctor' doctor}} class="btn-xl btn-danger">Delete</button>
 {{/if}}

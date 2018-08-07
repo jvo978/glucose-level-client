@@ -1,25 +1,25 @@
-{{#bs-navbar type=(if inverse 'inverse') fluid=fluid collapsed=collapsed onCollapse=(action (mut collapsed) true) onExpand=(action (mut collapsed) false) as |navbar|}}
+{{#bs-navbar class='navBackground' type=(if inverse 'inverse') fluid=fluid collapsed=collapsed onCollapse=(action (mut collapsed) true) onExpand=(action (mut collapsed) false) as |navbar|}}
   <div class="navbar-header">
     {{navbar.toggle}}
-    {{#link-to "application" class="navbar-brand"}}Home{{/link-to}}
+    {{#link-to "application" class="navbar-brand"}}<span class='blackFont hover'>Home</span>{{/link-to}}
     {{#if isAuthenticated}}
-    {{#link-to "get-doctors" class="navbar-brand"}}Doctors{{/link-to}}
     {{/if}}
   </div>
   {{#navbar.content}}
     {{#navbar.nav class='navbar-right' as |nav|}}
       {{#if isAuthenticated}}
-        {{#nav.item}}{{#nav.link-to "change-password"}}Change Password{{/nav.link-to}}{{/nav.item}}
-        {{#nav.item}}<a href="#" {{action "signOut"}}>Sign Out</a>{{/nav.item}}
+      {{#link-to "get-doctors" class="navbar-brand"}}<span class='blackFont hover'>Doctors</span>{{/link-to}}
+        {{#nav.item}}{{#nav.link-to "change-password"}}<span class='blackFont hover'>Change Password</span>{{/nav.link-to}}{{/nav.item}}
+        {{#nav.item}}<a href="#" {{action "signOut"}}><span class='blackFont hover'>Sign Out</span></a>{{/nav.item}}
       {{else}}
-        {{#nav.item}}{{#nav.link-to "sign-up"}}Sign Up{{/nav.link-to}}{{/nav.item}}
-        {{#nav.item}}{{#nav.link-to "sign-in"}}Sign In{{/nav.link-to}}{{/nav.item}}
+        {{#nav.item}}{{#nav.link-to "sign-up"}}<span class='blackFont hover'>Sign Up</span>{{/nav.link-to}}{{/nav.item}}
+        {{#nav.item}}{{#nav.link-to "sign-in"}}<span class='blackFont hover'>Sign In</span>{{/nav.link-to}}{{/nav.item}}
       {{/if}}
     {{/navbar.nav}}
   {{/navbar.content}}
 {{/bs-navbar}}
 
-<h1>Welcome to Ember!</h1>
+<h1>Welcome!</h1>
 
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}

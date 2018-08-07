@@ -8,7 +8,7 @@ export default Route.extend({
     deleteDoctor (doctor) {
       doctor.destroyRecord()
       .then(() => {
-        this.get('flashMessages').success('Delete doctor success!')
+        this.get('flashMessages').success('Successfully deleted doctor')
       })
       .catch(() => {
         this.get('flashMessages').danger('There was a problem. Please try again.')
@@ -17,7 +17,10 @@ export default Route.extend({
     updateDoctor (doctor) {
       doctor.save()
       .then(() => {
-        this.get('flashMessages').success('Doctor updated success!')
+        this.transitionTo('get-doctors')
+      })
+      .then(() => {
+        this.get('flashMessages').success('Successfully updated doctor')
       })
       .catch(() => {
         this.get('flashMessages').danger('There was a problem. Please try again.')
