@@ -6,13 +6,12 @@ export default Route.extend({
   },
   actions: {
     createDoctor (doctor) {
-      const newDoctor = this.get('store').createRecord('doctor', doctor)
-      newDoctor.save()
+      this.get('store').createRecord('doctor', doctor).save()
       .then(() => {
-        this.transitionTo('get-doctors')
+        this.transitionTo('doctors')
       })
       .then(() => {
-        this.get('flashMessages').success('Create doctor success')
+        this.get('flashMessages').success('Doctor added')
       })
       .catch(() => {
         this.get('flashMessages').danger('There was a problem. Please try again.')

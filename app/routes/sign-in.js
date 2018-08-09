@@ -13,7 +13,7 @@ export default Route.extend({
   actions: {
     signIn (credentials) {
       return this.get('auth').signIn(credentials)
-        .then(() => this.transitionTo('get-doctors'))
+        .then(() => this.transitionTo('doctors'))
         .then(() => this.get('flashMessages').success('Thanks for signing in!'))
         .catch(() => {
           this.get('flashMessages')

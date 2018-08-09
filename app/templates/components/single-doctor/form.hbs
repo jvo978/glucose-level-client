@@ -1,0 +1,8 @@
+<form {{action 'updateDoctor' doctor on='submit'}}>
+  <label>Name</label>{{input class="form-control input-sm" type="text" value=doctor.name required=true}}<br>
+  <label>Specialty</label>{{input class="form-control input-sm" type="text" value=doctor.specialty required=true}}<br>
+  <label>Hospital</label>{{input class="form-control input-sm" type="text" value=doctor.hospital required=true}}<br>
+  <label>Location</label>{{input class="form-control input-sm" type="text" value=doctor.location required=true}}<br>
+  <button class='btn-xl btn-primary' type='submit'>Update Doctor</button>
+  <button class='btn-xl' {{action 'toggleEditing'}}>Cancel</button>
+</form>

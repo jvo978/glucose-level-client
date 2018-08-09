@@ -11,9 +11,12 @@ Router.map(function () {
   this.route('sign-in')
   this.route('change-password')
 
-  this.route('create-doctor')
-  this.route('get-doctors')
-  this.route('get-doctor', { path: '/get-doctors/:doctor_id' })
+  this.route('doctors', function () {
+    this.route('create-doctor')
+  })
+  // this.route('doctor', { path: '/doctors/:doctor_id' })
+  // this.route('get-doctor', { path: '/doctors/:doctor_id' })
+  this.route('doctor')
 })
 
 export default Router
