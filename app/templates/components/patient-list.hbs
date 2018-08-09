@@ -1,0 +1,9 @@
+<form {{action 'createPatient' on='submit'}}>
+  {{input placeholder='Name' value=newPatient.name type='text' required=true}}
+  {{input placeholder='Age' value=newPatient.age type='number' required=true}}
+  {{input placeholder='Weight' value=newPatient.weight type='number' required=true}}
+  {{input placeholder='Glucose Level' value=newPatient.glucose type='number' required=true}}
+  {{input placeholder='Test Type' value=newPatient.test type='text' required=true}}
+  {{input placeholder='Date' value=newPatient.date type='date' required=true}}
+  <button class='btn-xl btn-primary' type='submit'>Add Patient</button>
+</form>

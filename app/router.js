@@ -10,8 +10,10 @@ Router.map(function () {
   this.route('sign-up')
   this.route('sign-in')
   this.route('change-password')
+
   this.route('create-doctor')
   this.route('get-doctors')
+  this.route('get-doctor', { path: '/get-doctors/:doctor_id' })
 })
 
 export default Router

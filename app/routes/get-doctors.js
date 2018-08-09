@@ -5,6 +5,9 @@ export default Route.extend({
     return this.get('store').findAll('doctor')
   },
   actions: {
+    goToDoctor (doctor) {
+      this.transitionTo('doctor', doctor.id)
+    },
     deleteDoctor (doctor) {
       doctor.destroyRecord()
       .then(() => {

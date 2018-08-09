@@ -13,6 +13,9 @@ export default Component.extend({
     updateDoctor () {
       this.toggleProperty('editing')
       this.sendAction('updateDoctor', this.get('doctor'))
+    },
+    goToDoctor () {
+      this.sendAction('doctor', this.get('doctor'))
     }
   }
 })
