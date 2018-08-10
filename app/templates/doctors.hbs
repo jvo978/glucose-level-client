@@ -1,5 +1,6 @@
 {{#if model}}
 <ol>
+<h1>There are {{model.length}} doctors.</h1>
 {{#each model as |doctor|}}
 <br>
   {{single-doctor doctor=doctor deleteDoctor='deleteDoctor' toggleEditing='toggleEditing' updateDoctor='updateDoctor'}}
@@ -11,7 +12,7 @@
 <br>
 {{outlet}}
 {{else}}
-<h1>There are no doctors, add here</h1>
+<h1>There are no doctors.</h1>
 {{#link-to 'doctors.create-doctor' tagName='button'}}Add Doctor{{/link-to}}
 <br>
 <br>

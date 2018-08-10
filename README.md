@@ -1,61 +1,73 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+<h1>Glucose-level-application</h1>
 
-# ember-auth-template
+<h2>User stories & Wireframe</h2>
 
-A front-end framework template for starting projects with a recent version of
-either the [Rails API Template](https://git.generalassemb.ly/ga-wdi-boston/rails-api-template)
-or the [Express API Template](https://git.generalassemb.ly/ga-wdi-boston/express-api-template).
+As a User, I want to sign up, to manage doctor info and patient glucose level associated with that doctor.
 
-_Note: When using the Express API Template, User endpoints may need to be
-modified in order for all authentication actions to execute properly._
+As a User, I want to sign in, to add, remove, update and show all doctors and patient associated with that doctor.
 
-At the beginning of each cohort, update from [ember-template](https://git.generalassemb.ly/ga-wdi-boston/ember-template).
+As a User, I want to change password, for security purposes.
 
-## Prerequisites
+As a User, I want to sign out, because I am finished editing doctor/patient information.
 
-- [ember-auth-template-walkthrough](https://git.generalassemb.ly/ga-wdi-boston/ember-auth-template-walkthrough)
+As a User, I want to be able to view all the doctors, all the patients that belong to that doctor.
 
-## Installation
+As a User, I want to be able to view a specific patient under their specific doctor and update their glucose levels on date visited.
 
-1. [Download](../../archive/master.zip) this template.
-1. Unzip and rename the template directory (`unzip ~/Downloads/ember-auth-template-master.zip`).
-1. Move into the new project and `git init`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `glucose-level-client` with your app name. This
-    includes:
-      - [`app/adapters/application.js`](app/adapters/application.js)
-      - [`app/index.html`](app/index.html)
-      - [`app/services/ajax.js`](app/services/ajax.js)
-      - [`config/environment.js`](config/environment.js)
-      - [`package.json`](package.json)
-      - [`tests/index.html`](tests/index.html)
-      - [`tests/unit/initializers/text-field-test.js`](tests/unit/initializers/text-field-test.js)
-1. Install dependencies with `npm install`.
-1. `git add` and `git commit` your changes.
-1. Run the development server with `ember server`. Use the `--proxy` flag to
-    avoid writing development-specific CORS and CSP settings.
+As a User, I want to be able to remove doctors and patients.
 
-## Dependencies
+As a User, I want to add new doctors and patients.
 
-Install build dependencies with `npm install`.
-If you have not installed phantomjs, you will need to install it globally:
-`npm install --global phantomjs-prebuilt`
+https://imgur.com/a/vQ8Udhh
 
--   [ember.js](http://emberjs.com/)
--   [ember-cli](http://www.ember-cli.com/)
--   [ember-bootstrap](https://www.ember-bootstrap.com/)
+<h2> Repositories for application</h2>
+<p>https://github.com/jvo978/glucose-level-client</p>
+<p>https://github.com/jvo978/glucose-level-api</p>
 
-## Structure
+<h2>How it Works</h2>
+<p>For right now, the application has a single resource (doctor) and user can apply crud action this sources. You can add doctors name, specialty, hospital they work for, and location they work at.  You would sign in and see the doctors and if you have none, a message will display saying you need to add one. Once you do, the information will display and also an edit and delete button appears along with that doctor. When a user clicks the edit button, the information of the targeted doctor will populate into a new form. An update button and cancel button will appear to take place of the edit/ delete. when the user is finished, they will hit update and the information will be updated and the page will re-render to show all doctors.  If the delete button is clicked, the targeted doctor will be deleted and the page re-renders all doctors as well.  There is also a add doctor button that will bring up the form for the user to add new doctors.</p>
 
-Dependencies are stored in [`package.json`](package.json).
+<h2>Deployed Sites</h2>
+https://glucose-level-api.herokuapp.com/
+<br>
+https://jvo978.github.io/glucose-level-client/
 
-Developers should store styles in [`app/styles`](app/styles) and load them
-from [`app/styles/app.scss`](app/styles/app.scss).
+<h2>What technologies were used:</h2>
+<ul>
+<li>JavaScript</li>
+<li>Ember</li>
+<li>Command Terminal</li>
+<li>HTML</li>
+<li>Handlebars</li>
+<li>SCSS</li>
+<li>Bootstrap</li>
+<li>Google</li>
+<li>Stack Overflow</li>
+</ul>
 
-To deploy an ember-auth-template based SPA, run `grunt deploy`.
+<h2>Set up process<h2>
+<ul>
+<li>Fork & clone ember-auth-template</li>
+<li>Removed application.js from .gitignore</li>
+<li>Replace template name with project name in a few files instructed from template guide.</li>
+<li>npm install</li>
+</ul>
 
-## [License](LICENSE)
+<h2>Development Process:</h2>
+<ul>
+<li>I started with userstories and wireframes.</li>
+<li>It was intially easy since we just learned ember in class. However, we had to set the backend ourselves. I generated my doctors route and create-doctor route.</li>
+<li>Then I generated the model for doctor and user and connected the relationship with belongTo and hasMany</li>
+<li>I made the create form inside the hbs file and had the create action in the form as well. On submit, create-doctor js file creates record on submit</li>
+<li>The parent route doctors finds all and returns all doctors</li>
+<li>I generated a component called single-doctor that handled displaying the doctors and including the other crud action buttons as well.</li>
+<li>I generated a file under single-doctor called form that held a form with values that populated into the field when a user clicks the edit button.</li>
+<li>On delete, the targeted doctor will be deleted and the page will render /doctors to show refresh list of doctors.</li>
+</ul>
 
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+<h2>Future Iteration/ fixed problems</h2>
+<ul>
+<li>Fix: Have the add button disappear when the doctor form shows up.</li>
+<li>Future: create patient for specific doctors</li>
+<li>Future: update, show, delete patient associated with doctor</li>
+</ul>
