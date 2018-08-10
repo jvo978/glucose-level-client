@@ -71,3 +71,6 @@ https://jvo978.github.io/glucose-level-client/
 <li>Future: create patient for specific doctors</li>
 <li>Future: update, show, delete patient associated with doctor</li>
 </ul>
+
+<h2>Snapshot</h2>
+https://imgur.com/K276xSD
