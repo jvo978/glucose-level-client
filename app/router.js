@@ -14,9 +14,7 @@ Router.map(function () {
   this.route('doctors', function () {
     this.route('create-doctor')
   })
-  // this.route('doctor', { path: '/doctors/:doctor_id' })
-  // this.route('get-doctor', { path: '/doctors/:doctor_id' })
-  this.route('doctor')
+  this.route('doctor', { path: '/doctors/:doctor_id' })
 })
 
 export default Router

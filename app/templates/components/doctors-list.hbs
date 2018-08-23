@@ -1,0 +1,14 @@
+<div>
+<h3>Doctor: {{doctor.name}}</h3>
+<ol>
+  {{#each doctor.patients as |patient|}}
+  <h3>{{patient.name}}</h3>
+    {{doctors-list/patient patient=patient
+                           deletePatient='deletePatient'
+                           updatePatient='updatePatient'}}
+  {{/each}}
+</ol>
+
+<h4>Create Patient</h4>
+{{doctors-list/patient/form patient=newPatient updatePatient='updatePatient'}}
+</div>

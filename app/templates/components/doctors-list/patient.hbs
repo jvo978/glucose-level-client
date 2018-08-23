@@ -1,0 +1,13 @@
+{{#if editing}}
+  {{doctors-list/patient/form patient=patient updatePatient='updatePatient'
+                                      toggleEditing='toggleEditing'
+                                      editForm=true}}
+{{else}}
+  {{patient.name}}<br>
+  {{patient.age}}<br>
+  {{patient.weight}}<br>
+  {{patient.glucose}}<br>
+  {{patient.test}}<br>
+  <button class='btn-xs btn-danger' {{ action 'deletePatient' }}>Delete</button>
+  <button class='btn-xs btn-primary' {{ action 'toggleEditing' }}>Edit</button>
+{{/if}}

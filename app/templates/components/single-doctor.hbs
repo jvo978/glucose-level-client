@@ -1,7 +1,7 @@
 {{#if editing}}
   {{single-doctor/form updateDoctor='updateDoctor' toggleEditing='toggleEditing' doctor=doctor}}
 {{else}}
-<li><label>Name: </label>{{doctor.name}}</li>
+<li><label>Name: </label>{{#link-to 'doctor' doctor.id}}{{doctor.name}}{{/link-to}}</li>
 <label>Specialty: </label>{{doctor.specialty}}<br>
 <label>Hospital: </label>{{doctor.hospital}}<br>
 <label>Location: </label>{{doctor.location}}<br>
