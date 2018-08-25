@@ -1,14 +1,19 @@
 <div>
-<h3>Doctor: {{doctor.name}}</h3>
+<h3 class='doctor-name'>Dr. {{doctor.name}}</h3>
+{{#if doctor.patients}}
+<div class='list-display'>
 <ol>
   {{#each doctor.patients as |patient|}}
-  <h3>{{patient.name}}</h3>
     {{doctors-list/patient patient=patient
                            deletePatient='deletePatient'
                            updatePatient='updatePatient'}}
   {{/each}}
 </ol>
-
-<h4>Create Patient</h4>
+</div>
+{{else}}
+<h2>There are no patients.</h2>
+{{/if}}
+<div class='line-break'></div>
+<h3>Add Patient</h3>
 {{doctors-list/patient/form patient=newPatient updatePatient='updatePatient'}}
 </div>

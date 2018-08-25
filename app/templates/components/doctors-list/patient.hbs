@@ -3,11 +3,13 @@
                                       toggleEditing='toggleEditing'
                                       editForm=true}}
 {{else}}
-  {{patient.name}}<br>
-  {{patient.age}}<br>
-  {{patient.weight}}<br>
-  {{patient.glucose}}<br>
-  {{patient.test}}<br>
-  <button class='btn-xs btn-danger' {{ action 'deletePatient' }}>Delete</button>
-  <button class='btn-xs btn-primary' {{ action 'toggleEditing' }}>Edit</button>
+<br>
+<li><label>Patient Name: </label> {{patient.name}}<br></li>
+  <label>Age: </label> {{patient.age}}<br>
+  <label>Weight: </label> {{patient.weight}}<br>
+  <label>Glucose: </label> {{patient.glucose}}<br>
+  <label>Test Type: </label> {{patient.test}}<br>
+  <button class='btn btn-danger' {{ action 'deletePatient' }}>Delete</button>
+  <button class='btn btn-primary' {{ action 'toggleEditing' }}>Edit</button>
+  <br>
 {{/if}}

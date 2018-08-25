@@ -1,47 +1,23 @@
+<h2 class='text-center'>Doctors</h2>
 {{#if model}}
+<div class='list-display'>
 <ol>
-<h1>There are {{model.length}} doctors.</h1>
 {{#each model as |doctor|}}
-<br>
   {{single-doctor doctor=doctor deleteDoctor='deleteDoctor' toggleEditing='toggleEditing' updateDoctor='updateDoctor'}}
 <br>
 {{/each}}
 </ol>
-{{#link-to 'doctors.create-doctor' tagName='button'}}Add Doctor{{/link-to}}
+</div>
+<div class='line-break'></div>
+<br>
+{{#link-to 'doctors.create-doctor' tagName='button' class='btn btn-light'}}Add Doctor{{/link-to}}
 <br>
 <br>
 {{outlet}}
 {{else}}
-<h1>There are no doctors.</h1>
+<h2>There are no doctors.</h2>
 {{#link-to 'doctors.create-doctor' tagName='button'}}Add Doctor{{/link-to}}
 <br>
 <br>
 {{outlet}}
 {{/if}}
-
-{{!-- <div>
-  <h2>Doctors</h2>
-<ol>
-  {{#each model as |doctor|}}
-  <li {{action 'goToDoctor' list}}><a href="#">{{doctor.name}}</a></li>
-    {{doctor.specialty}}<br>
-    {{doctor.hospital}}<br>
-    {{doctor.location}}<br>
-    {{/each}}
-</ol> --}}
-{{!--
-{{#if model}}
-{{#link-to 'doctor' class='font-size'}}Add Doctor{{/link-to}}
-<div class='font-size'>
-  <ol>
-    {{#each model as |doctor|}}
-    <br>
-      {{doctor-edit doctor=doctor deleteDoctor='deleteDoctor' updateDoctor='updateDoctor'}}
-    <br>
-    {{/each}}
-  </ol>
-</div>
-{{else}}make onclick disappear on success ember
-<h2>There are no doctors, add doctor here!</h2>{{#link-to 'doctors' tagName='button'}}Add Doctor
-{{/link-to}}
-{{/if}} --}}

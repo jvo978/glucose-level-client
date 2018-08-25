@@ -10,10 +10,22 @@ export default Route.extend({
   },
   actions: {
     deletePatient (patient) {
-      patient.destroyRecord()
+      patient.destroyRecord().then(() => this.refresh())
+      .then(() => {
+        this.get('flashMessages').success('Patient deleted')
+      })
+      .catch(() => {
+        this.get('flashMessages').danger('There was a problem. Please try again.')
+      })
     },
     updatePatient (patient) {
       patient.save().then(() => this.refresh())
+      .then(() => {
+        this.get('flashMessages').success('Patient saved')
+      })
+      .catch(() => {
+        this.get('flashMessages').danger('There was a problem. Please try again.')
+      })
     }
   }
 })

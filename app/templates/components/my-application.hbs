@@ -1,7 +1,7 @@
 {{#bs-navbar class='navBackground' type=(if inverse 'inverse') fluid=fluid collapsed=collapsed onCollapse=(action (mut collapsed) true) onExpand=(action (mut collapsed) false) as |navbar|}}
   <div class="navbar-header">
     {{navbar.toggle}}
-    {{#link-to "application" class="navbar-brand"}}<span class='blackFont hover'>Home</span>{{/link-to}}
+    {{#link-to "application" class="navbar-brand"}}<span class='blackFont hover font-size'>Glumon</span>{{/link-to}}
   </div>
   {{#navbar.content}}
     {{#navbar.nav class='navbar-right' as |nav|}}
@@ -17,12 +17,9 @@
   {{/navbar.content}}
 {{/bs-navbar}}
 
-<h1>Welcome! <span class='username'>{{user}}</span></h1>
-
+<div class="col-md-8 col-md-offset-2 content">
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
 {{/each}}
-
-<div class="col-md-8 col-md-offset-2">
   {{outlet}}
 </div>

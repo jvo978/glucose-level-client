@@ -1,11 +1,13 @@
 <form {{action 'updatePatient' on='submit'}}>
-  {{input placeholder="Patient Name" value=patient.name type='text' required=true}}<br>
-  {{input placeholder="Patient Age" value=patient.age type='number' required=true}}<br>
-  {{input placeholder="Patient Weight" value=patient.weight type='number' required=true}}<br>
-  {{input placeholder="Patient Glucose Level" value=patient.glucose type='number' required=true}}<br>
-  {{input placeholder="Patient Test Type" value=patient.test type='text' required=true}}<br>
-  <button class='btn-xs btn-info' type='submit'>Save Patient</button>
+  <label class='labelPadding'>Patient Name</label>{{input placeholder="Patient Name" value=patient.name type='text' required=true}}
+  <label class='labelPadding'>Age</label>{{input placeholder="Patient Age" value=patient.age type='number' required=true}}
+  <label class='labelPadding'>Weight</label>{{input placeholder="Patient Weight" value=patient.weight type='number' required=true}}
+  <label class='labelPadding'>Glucose Level</label>{{input placeholder="Patient Glucose Level" value=patient.glucose type='number' required=true}}
+  <label class='labelPadding'>Test Type</label>{{input placeholder="Patient Test Type" value=patient.test type='text' required=true}}<br>
+  <button class='btn btn-info' type='submit'>Save Patient</button>
 {{#if editForm}}
-  <button {{action 'cancel'}}>Cancel</button>
+  <button class='btn btn-danger' {{action 'cancel'}}>Cancel</button>
   {{/if}}
+  {{#link-to 'doctors' tagName='button' class='btn btn-light'}}Back to doctors{{/link-to}}
 </form>
+<br>

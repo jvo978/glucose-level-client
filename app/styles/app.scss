@@ -5,18 +5,62 @@
   border: 2px solid black;
 }
 
+.content {
+  background-color: white;
+  border: black solid 2px;
+  padding: 20px 50px;
+  // margin-bottom: 25px;
+}
+
+.doctor-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 45px;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .blackFont {
   color: black;
   font-family: 'Kaushan Script', cursive;
   font-size: 25px;
 }
 
-.username {
-  font-family: 'Rock Salt', cursive;
+.lobster {
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
 }
+
+.list-display {
+  font-size: 15px;
+  border: solid black 1px;
+  padding: 20px 20px 0px 20px;
+}
+
+.labelPadding {
+  padding-top: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.line-break {
+  border: solid black 1px;
+  margin-top: 15px;
+}
+
+// .username {
+//   font-family: 'Rock Salt', cursive;
+// }
 
 body {
   background-color: #f1e291;
+  background-image: url('https://i.imgur.com/6HBV8lZ.jpg');
+  background-size: cover;
 }
 
 .hover:hover {
@@ -24,11 +68,6 @@ body {
   color: white;
 }
 
-.img {
-  width: 200px;
-  height: 200px;
-}
-
 .font-size {
-  font-size: 15px;
+  font-size: 40px;
 }
