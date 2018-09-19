@@ -48,7 +48,7 @@ module.exports = function (environment) {
   if (environment === 'production') {
     ENV.rootURL = '/glucose-level-client'
     ENV.locationType = 'hash'
-    ENV.apiHost = 'https://glucose-level-api.herokuapp.com/'
+    ENV.apiHost = 'https://glucose-level-api.herokuapp.com'
   }
 
   return ENV
